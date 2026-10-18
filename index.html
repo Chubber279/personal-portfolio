@@ -12,7 +12,8 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script>
-    // Apply saved theme before paint to avoid a flash.
+    // Theme before paint (no flash); flag JS so reveal animations never hide content without it.
+    document.documentElement.classList.add("js");
     try {
       var t = localStorage.getItem("theme");
       if (t) document.documentElement.dataset.theme = t;
@@ -38,182 +39,281 @@
 
   <header class="site-header">
     <div class="wrap bar">
-      <a class="brand" href="#top" aria-label="Lorenzo Ocampo, home">LO</a>
-      <nav aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Lorenzo Ocampo, home">
+        <span class="brand-mark">LO</span>
+        <span class="brand-name">Lorenzo Ocampo</span>
+      </a>
+      <nav id="site-nav" aria-label="Primary">
         <ul>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#projects">Work</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#research">Research</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a class="nav-cta" href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle light and dark theme">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-4.4 2.26 5.4 5.4 0 0 1-5.4-5.4c0-1.8.88-3.4 2.24-4.4A9.1 9.1 0 0 0 12 3z"/></svg>
-      </button>
+      <div class="bar-actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle light and dark theme">
+          <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-4.4 2.26 5.4 5.4 0 0 1-5.4-5.4c0-1.8.88-3.4 2.24-4.4A9.1 9.1 0 0 0 12 3z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></svg>
+        </button>
+        <button id="menu-toggle" class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="main">
-    <section id="top" class="hero wrap">
-      <p class="eyebrow">Full Stack Software Engineer · Philippines (UTC+8)</p>
-      <h1>Lorenzo Miguel Ocampo</h1>
-      <p class="lead">I build and run production systems in Java/Spring Boot, Vue.js and AWS, and I use AI tooling to remove slow, repetitive engineering work. Currently at Samsung R&amp;D Philippines. Looking for a fully remote, product-focused role.</p>
-      <p class="actions">
-        <a class="btn primary" href="mailto:lorenzo.ocampo279@gmail.com">Email me</a>
-        <a class="btn" href="assets/Lorenzo_Ocampo_Resume_2026.pdf" download>Download resume (PDF)</a>
-        <a class="btn" href="https://www.linkedin.com/in/lmlocampo/" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://github.com/Chubber279" rel="noopener">GitHub</a>
-      </p>
-      <ul class="facts" aria-label="Highlights">
-        <li><strong>2+ yrs</strong><span>in production engineering</span></li>
-        <li><strong>up to 50%</strong><span>faster support-ticket resolution</span></li>
-        <li><strong>76 actions</strong><span>in a 14-policy access-control system</span></li>
-        <li><strong>IEEE</strong><span>published NLP research</span></li>
-      </ul>
-    </section>
+    <!-- Hero -->
+    <section id="top" class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="status"><span class="dot" aria-hidden="true"></span>Open to fully remote roles</p>
+          <h1>Lorenzo Miguel Ocampo</h1>
+          <p class="role">Full Stack Software Engineer</p>
+          <p class="lead">I build and run production systems in <strong>Java/Spring Boot</strong>, <strong>Vue.js</strong> and <strong>AWS</strong>, and I use AI tooling to remove slow, repetitive engineering work. Currently at Samsung R&amp;D Philippines. Looking for a fully remote, product-focused role.</p>
+          <p class="actions">
+            <a class="btn primary" href="mailto:lorenzo.ocampo279@gmail.com">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16v12H4z M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              Email me
+            </a>
+            <a class="btn" href="assets/Lorenzo_Ocampo_Resume_2026.pdf" download>
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Resume (PDF)
+            </a>
+          </p>
+          <p class="socials">
+            <a href="https://www.linkedin.com/in/lmlocampo/" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/Chubber279" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+              <span>GitHub</span>
+            </a>
+          </p>
+        </div>
 
-    <section id="about" class="wrap">
-      <h2>About</h2>
-      <div class="prose">
-        <p>I'm a full stack engineer with production experience in an enterprise admin portal and an airline ticketing platform. I'm comfortable across the stack: Spring Boot and .NET on the backend, Vue.js and React on the frontend, and AWS (Lambda, SQS, KMS, S3, Athena) underneath.</p>
-        <p>Since September 2026 I also own quarterly planning, feature scoping and breakdown, and onboarding of new hires on my team, and I work as a mentor-guided technical project manager / product owner coordinating the data, server and app teams. That means I write for two audiences: engineers who need clear tasks, and stakeholders who need clear status.</p>
-        <p>I have a research background too. I designed, built and presented the NLP work behind a paper published by IEEE, which is where my habit of writing things down properly comes from.</p>
-        <p class="note">Authorized to work in the Philippines. Available as a contractor or through an employer of record. No visa sponsorship needed for remote work.</p>
+        <aside class="profile-card reveal" aria-label="At a glance">
+          <div class="profile-top">
+            <span class="avatar" aria-hidden="true">LO</span>
+            <div>
+              <p class="profile-name">Lorenzo Ocampo</p>
+              <p class="profile-role">Samsung R&amp;D Philippines</p>
+            </div>
+          </div>
+          <dl class="profile-meta">
+            <div><dt>Location</dt><dd>Philippines (UTC+8)</dd></div>
+            <div><dt>Work setup</dt><dd>Remote · contractor or employer of record</dd></div>
+            <div><dt>Visa</dt><dd>No sponsorship needed for remote work</dd></div>
+            <div><dt>Languages</dt><dd>English, Filipino, Japanese (N5)</dd></div>
+          </dl>
+          <ul class="chips compact" aria-label="Core stack">
+            <li>Java</li><li>Spring Boot</li><li>Vue.js</li><li>AWS</li><li>Python</li><li>Claude</li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="wrap">
+        <ul class="facts reveal" aria-label="Highlights">
+          <li><strong>2+ yrs</strong><span>in production engineering</span></li>
+          <li><strong>up to 50%</strong><span>faster support-ticket resolution</span></li>
+          <li><strong>76 actions</strong><span>in a 14-policy access-control system</span></li>
+          <li><strong>IEEE</strong><span>published NLP research</span></li>
+        </ul>
       </div>
     </section>
 
-    <section id="projects" class="wrap">
-      <h2>Selected work</h2>
-      <p class="section-intro">Two production projects and two self-directed builds. Employer work is described at the level I'm able to share publicly.</p>
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="wrap split">
+        <header class="section-head">
+          <p class="kicker">01 · About</p>
+          <h2>Engineer first, increasingly the person who plans the work</h2>
+        </header>
+        <div class="prose reveal">
+          <p>I'm a full stack engineer with production experience in an enterprise admin portal and an airline ticketing platform. I'm comfortable across the stack: Spring Boot and .NET on the backend, Vue.js and React on the frontend, and AWS (Lambda, SQS, KMS, S3, Athena) underneath.</p>
+          <p>Since September 2026 I also own quarterly planning, feature scoping and breakdown, and onboarding of new hires on my team, and I work as a mentor-guided technical project manager / product owner coordinating the data, server and app teams. That means I write for two audiences: engineers who need clear tasks, and stakeholders who need clear status.</p>
+          <p>I have a research background too. I designed, built and presented the NLP work behind a paper published by IEEE, which is where my habit of writing things down properly comes from.</p>
+        </div>
+      </div>
+    </section>
 
-      <div class="cards">
-        <article class="card">
-          <header>
-            <p class="tag">Samsung R&amp;D Philippines · Production</p>
+    <!-- Work -->
+    <section id="projects" class="section alt">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">02 · Selected work</p>
+          <h2>Problems I've solved</h2>
+          <p class="section-intro">Two production projects and two self-directed builds. Employer work is described at the level I'm able to share publicly.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card reveal">
+            <p class="card-tag"><span class="badge prod">Production</span>Samsung R&amp;D Philippines</p>
             <h3>Carrier certificate management and access control</h3>
-          </header>
-          <dl>
-            <div><dt>Problem</dt><dd>An admin portal managing thousands of devices needed carrier certificate management and fine-grained control over who can do what.</dd></div>
-            <div><dt>What I built</dt><dd>A carrier certificate management feature and a policy-based access control (PBAC) system: <strong>14 policies</strong> covering <strong>76 permissible actions</strong>.</dd></div>
-            <div><dt>Stack</dt><dd>Spring Boot, Vue.js, AWS Lambda, SQS, KMS</dd></div>
-          </dl>
-        </article>
+            <p class="metric"><strong>14</strong> policies · <strong>76</strong> permissible actions</p>
+            <dl>
+              <div><dt>Problem</dt><dd>An admin portal managing thousands of devices needed carrier certificate management and fine-grained control over who can do what.</dd></div>
+              <div><dt>Built</dt><dd>A carrier certificate management feature and a policy-based access control (PBAC) system covering 14 policies and 76 permissible actions.</dd></div>
+            </dl>
+            <ul class="chips" aria-label="Stack"><li>Spring Boot</li><li>Vue.js</li><li>AWS Lambda</li><li>SQS</li><li>KMS</li></ul>
+          </article>
 
-        <article class="card">
-          <header>
-            <p class="tag">Samsung R&amp;D Philippines · Production</p>
+          <article class="card reveal">
+            <p class="card-tag"><span class="badge prod">Production</span>Samsung R&amp;D Philippines</p>
             <h3>AI-assisted support and testing automation</h3>
-          </header>
-          <dl>
-            <div><dt>Problem</dt><dd>Customer-ticket (VOC) investigations and endpoint testing were slow because of repeated manual steps.</dd></div>
-            <div><dt>What I built</dt><dd>Scripts for IMEI-encryption API calls, SQL query generation and log analysis, built with Cline-assisted development.</dd></div>
-            <div><dt>Result</dt><dd>VOC resolution time cut by <strong>up to 50%</strong>. Endpoint testing time cut from <strong>30 to 10 minutes</strong>.</dd></div>
-            <div><dt>Stack</dt><dd>Scripting, SQL, Cline</dd></div>
-          </dl>
-        </article>
+            <p class="metric"><strong>up to 50%</strong> faster VOC resolution · <strong>30 → 10 min</strong> endpoint testing</p>
+            <dl>
+              <div><dt>Problem</dt><dd>Customer-ticket (VOC) investigations and endpoint testing were slow because of repeated manual steps.</dd></div>
+              <div><dt>Built</dt><dd>Scripts for IMEI-encryption API calls, SQL query generation and log analysis, built with Cline-assisted development.</dd></div>
+            </dl>
+            <ul class="chips" aria-label="Stack"><li>Scripting</li><li>SQL</li><li>Cline</li></ul>
+          </article>
 
-        <article class="card">
-          <header>
-            <p class="tag">Self-directed · April 2026</p>
+          <article class="card reveal">
+            <p class="card-tag"><span class="badge side">Side project</span>April 2026</p>
             <h3>Retail Analytics Pipeline</h3>
-          </header>
-          <dl>
-            <div><dt>Problem</dt><dd>Raw ERP CSV exports from 15 retail stores across two brands had to become usable KPI reports.</dd></div>
-            <div><dt>What I built</dt><dd>An ETL pipeline that converts the exports into formatted Excel KPI reports. I designed it and directed Claude-assisted implementation.</dd></div>
-            <div><dt>Scope</dt><dd>15 stores, two brands</dd></div>
-            <div><dt>Stack</dt><dd>Python, Claude</dd></div>
-          </dl>
-        </article>
+            <p class="metric"><strong>15</strong> stores · <strong>2</strong> brands</p>
+            <dl>
+              <div><dt>Problem</dt><dd>Raw ERP CSV exports from 15 retail stores across two brands had to become usable KPI reports.</dd></div>
+              <div><dt>Built</dt><dd>An ETL pipeline that converts the exports into formatted Excel KPI reports. I designed it and directed Claude-assisted implementation.</dd></div>
+            </dl>
+            <ul class="chips" aria-label="Stack"><li>Python</li><li>Claude</li></ul>
+          </article>
 
-        <article class="card">
-          <header>
-            <p class="tag">Self-directed · April 2026</p>
+          <article class="card reveal">
+            <p class="card-tag"><span class="badge side">Side project</span>April 2026</p>
             <h3>Staff Scheduling Application</h3>
-          </header>
-          <dl>
-            <div><dt>Problem</dt><dd>Store shifts and sales-associate assignments were scheduled by hand.</dd></div>
-            <div><dt>What I built</dt><dd>A web app with an auto-fill scheduling algorithm, a REST API and a browser frontend for managing shifts and assignments.</dd></div>
-            <div><dt>Stack</dt><dd>Node.js, SQLite, REST API, Claude</dd></div>
-          </dl>
+            <p class="metric">Auto-fill scheduling · REST API · browser UI</p>
+            <dl>
+              <div><dt>Problem</dt><dd>Store shifts and sales-associate assignments were scheduled by hand.</dd></div>
+              <div><dt>Built</dt><dd>A web app with an auto-fill scheduling algorithm, a REST API and a browser frontend for managing shifts and assignments.</dd></div>
+            </dl>
+            <ul class="chips" aria-label="Stack"><li>Node.js</li><li>SQLite</li><li>REST API</li><li>Claude</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">03 · Experience</p>
+          <h2>Where I've worked</h2>
+        </header>
+        <ol class="timeline">
+          <li class="reveal">
+            <div class="tl-head">
+              <h3>Full Stack Software Engineer</h3>
+              <span class="when">Mar 2025 – Present</span>
+            </div>
+            <p class="org">Samsung R&amp;D Philippines</p>
+            <ul>
+              <li>Built carrier certificate management and PBAC (14 policies, 76 permissible actions) for an admin portal managing thousands of devices.</li>
+              <li>Automated IMEI-encryption API calls, SQL generation and log analysis, cutting VOC resolution time by up to 50% and endpoint testing from 30 to 10 minutes.</li>
+              <li>Since Sep 2026: own quarterly planning, feature scoping and breakdown, and onboarding of 2 new hires, inherited from a departed senior engineer.</li>
+              <li>Since Sep 2026: mentor-guided technical project manager / product owner on a live project. Run meetings, present reports, coordinate the data, server and app teams (3 members each), and document meetings, reports and to-dos in the team wiki.</li>
+              <li>Resolve about 4 customer-reported tickets per sprint through production debugging and direct database intervention.</li>
+            </ul>
+          </li>
+          <li class="reveal">
+            <div class="tl-head">
+              <h3>Junior Software Engineer</h3>
+              <span class="when">Dec 2023 – Jan 2025</span>
+            </div>
+            <p class="org">Aeronology Philippines Inc</p>
+            <ul>
+              <li>Delivered the South African Airlines integration into the ticketing platform, extending access to international routes.</li>
+              <li>Triaged and resolved production incidents through targeted hotfixes, reducing downtime and strengthening reliability.</li>
+              <li>Strengthened backend code quality and documentation, easing maintenance and speeding up team development.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="section alt">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">04 · Research</p>
+          <h2>Published work</h2>
+        </header>
+        <article class="paper reveal">
+          <p class="card-tag"><span class="badge ieee">IEEE</span>ICCCI 2024</p>
+          <h3>A Novel Automatic Definition Selector and Scoring Scheme for the Identification of Filipino Metaphors</h3>
+          <p class="authors">Ocampo, L. M., &amp; Clariño, M. A. A. D. · 2024 6th International Conference on Computer Communication and the Internet (ICCCI), IEEE</p>
+          <p>Primary author. I designed the methodology, implemented the system and wrote the manuscript, with my adviser contributing editorial revisions, and presented it orally to an international audience of academics and industry professionals.</p>
+          <a class="btn small" href="https://ieeexplore.ieee.org/document/10674510" rel="noopener">
+            Read on IEEE Xplore
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <p class="doi">DOI 10.1109/ICCCI62159.2024.10674510</p>
         </article>
       </div>
     </section>
 
-    <section id="experience" class="wrap">
-      <h2>Experience</h2>
-      <ol class="timeline">
-        <li>
-          <header>
-            <h3>Full Stack Software Engineer <span>· Samsung R&amp;D Philippines</span></h3>
-            <p class="when">Mar 2025 – Present</p>
-          </header>
-          <ul>
-            <li>Built carrier certificate management and PBAC (14 policies, 76 permissible actions) for an admin portal managing thousands of devices.</li>
-            <li>Automated IMEI-encryption API calls, SQL generation and log analysis, cutting VOC resolution time by up to 50% and endpoint testing from 30 to 10 minutes.</li>
-            <li>Since Sep 2026: own quarterly planning, feature scoping and breakdown, and onboarding of 2 new hires, inherited from a departed senior engineer.</li>
-            <li>Since Sep 2026: mentor-guided technical project manager / product owner on a live project. Run meetings, present reports, coordinate the data, server and app teams (3 members each), and document meetings, reports and to-dos in the team wiki.</li>
-            <li>Resolve about 4 customer-reported tickets per sprint through production debugging and direct database intervention.</li>
-          </ul>
-        </li>
-        <li>
-          <header>
-            <h3>Junior Software Engineer <span>· Aeronology Philippines Inc</span></h3>
-            <p class="when">Dec 2023 – Jan 2025</p>
-          </header>
-          <ul>
-            <li>Delivered the South African Airlines integration into the ticketing platform, extending access to international routes.</li>
-            <li>Triaged and resolved production incidents through targeted hotfixes, reducing downtime and strengthening reliability.</li>
-            <li>Strengthened backend code quality and documentation, easing maintenance and speeding up team development.</li>
-          </ul>
-        </li>
-      </ol>
-    </section>
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="kicker">05 · Skills</p>
+          <h2>Tools I work with</h2>
+        </header>
+        <div class="skills">
+          <div class="skill-group reveal"><h3>Languages</h3><ul class="chips"><li>Java</li><li>JavaScript</li><li>Python</li><li>C#</li></ul></div>
+          <div class="skill-group reveal"><h3>Frameworks</h3><ul class="chips"><li>Spring Boot</li><li>Vue.js</li><li>React</li><li>Node.js</li><li>.NET</li></ul></div>
+          <div class="skill-group reveal"><h3>Data</h3><ul class="chips"><li>MySQL</li><li>DynamoDB</li><li>Aurora RDS</li><li>SQLite</li></ul></div>
+          <div class="skill-group reveal"><h3>Cloud</h3><ul class="chips"><li>AWS Lambda</li><li>SQS</li><li>KMS</li><li>S3</li><li>Athena</li></ul></div>
+          <div class="skill-group reveal"><h3>AI-assisted development</h3><ul class="chips"><li>Claude</li><li>Cline</li><li>Prompt design</li><li>Workflow automation</li></ul></div>
+          <div class="skill-group reveal"><h3>Delivery and leadership</h3><ul class="chips"><li>Quarterly planning</li><li>Feature breakdown</li><li>Cross-team coordination</li><li>Status reporting</li><li>Mentoring</li><li>Technical documentation</li></ul></div>
+        </div>
 
-    <section id="research" class="wrap">
-      <h2>Research</h2>
-      <article class="paper">
-        <h3>A Novel Automatic Definition Selector and Scoring Scheme for the Identification of Filipino Metaphors</h3>
-        <p>Ocampo, L. M., &amp; Clariño, M. A. A. D. · 2024 6th International Conference on Computer Communication and the Internet (ICCCI), IEEE</p>
-        <p>Primary author. I designed the methodology, implemented the system and wrote the manuscript, with my adviser contributing editorial revisions, and presented it orally to an international audience of academics and industry professionals.</p>
-        <p><a href="https://ieeexplore.ieee.org/document/10674510" rel="noopener">DOI 10.1109/ICCCI62159.2024.10674510</a></p>
-      </article>
-    </section>
-
-    <section id="skills" class="wrap">
-      <h2>Skills</h2>
-      <div class="skills">
-        <div><h3>Languages</h3><ul class="chips"><li>Java</li><li>JavaScript</li><li>Python</li><li>C#</li></ul></div>
-        <div><h3>Frameworks</h3><ul class="chips"><li>Spring Boot</li><li>Vue.js</li><li>React</li><li>Node.js</li><li>.NET</li></ul></div>
-        <div><h3>Data</h3><ul class="chips"><li>MySQL</li><li>DynamoDB</li><li>Aurora RDS</li><li>SQLite</li></ul></div>
-        <div><h3>Cloud</h3><ul class="chips"><li>AWS Lambda</li><li>SQS</li><li>KMS</li><li>S3</li><li>Athena</li></ul></div>
-        <div><h3>AI-assisted development</h3><ul class="chips"><li>Claude</li><li>Cline</li><li>Prompt design</li><li>Workflow automation</li></ul></div>
-        <div><h3>Delivery and leadership</h3><ul class="chips"><li>Quarterly planning</li><li>Feature breakdown</li><li>Cross-team coordination</li><li>Status reporting</li><li>Mentoring</li><li>Technical documentation</li></ul></div>
+        <div class="creds">
+          <div class="cred reveal">
+            <p class="cred-label">Education</p>
+            <p class="cred-title">BS Computer Science</p>
+            <p>University of the Philippines Los Baños, 2019–2023. Cum Laude, DOST-SEI MERIT Scholar.</p>
+          </div>
+          <div class="cred reveal">
+            <p class="cred-label">Certification</p>
+            <p class="cred-title">AWS Certified AI Practitioner</p>
+            <p>Amazon Web Services, March 2025.</p>
+          </div>
+          <div class="cred reveal">
+            <p class="cred-label">Languages</p>
+            <p class="cred-title">English · Filipino · Japanese</p>
+            <p>English native / full professional, Filipino native, Japanese elementary (JLPT N5).</p>
+          </div>
+        </div>
       </div>
-
-      <h3 class="sub">Education and certification</h3>
-      <ul class="plain">
-        <li><strong>BS Computer Science</strong>, University of the Philippines Los Baños, 2019–2023. Cum Laude, DOST-SEI MERIT Scholar.</li>
-        <li><strong>AWS Certified AI Practitioner</strong>, Amazon Web Services, March 2025.</li>
-        <li><strong>Languages:</strong> English (native / full professional), Filipino (native), Japanese (elementary, JLPT N5).</li>
-      </ul>
     </section>
 
-    <section id="contact" class="wrap contact">
-      <h2>Contact</h2>
-      <p>I'm looking for a fully remote, product-focused engineering role. The fastest way to reach me is email.</p>
-      <p class="actions">
-        <a class="btn primary" href="mailto:lorenzo.ocampo279@gmail.com">lorenzo.ocampo279@gmail.com</a>
-        <a class="btn" href="https://www.linkedin.com/in/lmlocampo/" rel="noopener">linkedin.com/in/lmlocampo</a>
-        <a class="btn" href="https://github.com/Chubber279" rel="noopener">github.com/Chubber279</a>
-        <a class="btn" href="assets/Lorenzo_Ocampo_Resume_2026.pdf" download>Resume (PDF)</a>
-      </p>
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="wrap">
+        <div class="cta reveal">
+          <p class="kicker">06 · Contact</p>
+          <h2>Let's talk about your team</h2>
+          <p>I'm looking for a fully remote, product-focused engineering role. Authorized to work in the Philippines, available as a contractor or through an employer of record, and no visa sponsorship needed. The fastest way to reach me is email.</p>
+          <p class="actions">
+            <a class="btn primary on-dark" href="mailto:lorenzo.ocampo279@gmail.com">lorenzo.ocampo279@gmail.com</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/lmlocampo/" rel="noopener">LinkedIn</a>
+            <a class="btn ghost" href="https://github.com/Chubber279" rel="noopener">GitHub</a>
+            <a class="btn ghost" href="assets/Lorenzo_Ocampo_Resume_2026.pdf" download>Resume (PDF)</a>
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
+    <div class="wrap foot">
       <p>© <span id="year">2026</span> Lorenzo Miguel Ocampo · Philippines (UTC+8)</p>
+      <a href="#top">Back to top ↑</a>
     </div>
   </footer>
 
