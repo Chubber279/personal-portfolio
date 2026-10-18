@@ -29,15 +29,21 @@ or open `index.html` directly in a browser.
 
 ## Publishing (free)
 
-1. Create a GitHub account and a public repository (e.g. `portfolio`).
-2. Push this folder to it.
+GitHub account: https://github.com/Chubber279. The account already has a repository named
+`Chubber279.github.io` (a 2021 class exercise page), so the cleanest URL is to publish there:
+
+1. Back up or archive the current contents of `Chubber279.github.io` if you want to keep them.
+2. Replace its contents with this folder and push to `main`:
+   `git remote add origin https://github.com/Chubber279/Chubber279.github.io.git`
+   `git push -f origin master:main` (overwrites the old page — step 1 first).
 3. Repository Settings → Pages → Deploy from branch → `main` / root.
-4. The site goes live at `https://<username>.github.io/portfolio/`.
+4. The site goes live at `https://chubber279.github.io/`.
 
-Alternatives: Netlify or Cloudflare Pages (drag-and-drop this folder).
+Alternatives: a new repository `portfolio` (URL `https://chubber279.github.io/portfolio/`), or
+Netlify / Cloudflare Pages (drag-and-drop this folder).
 
-After publishing, add the URL to the resume header (`LINKEDIN`/contact data in
-`build_resume.py`), the knowledge-base credentials register, and LinkedIn.
+After publishing, add the URL to `LINKS` in `profile-knowledge-base/resume/build/build_resume.py`,
+the knowledge-base credentials register, and LinkedIn.
 
 ## Next improvements
 
