@@ -215,7 +215,7 @@ SITE = dict(
     "Looking for a fully remote, product-focused role.",
     profile=[
         ("Location", LOCATION),
-        ("Work setup", "Remote · contractor or employer of record"),
+        ("Work setup", "Remote, as a contractor or through an employer of record"),
         ("Visa", "No sponsorship needed for remote work"),
         ("Languages", "English, Filipino"),
     ],
@@ -238,7 +238,7 @@ SITE = dict(
         dict(
             kind="prod", where="Samsung R&D Philippines",
             title="Carrier Services Platform",
-            metric="Task-force lead · frontend and backend",
+            metric="Task-force lead, frontend and backend",
             rows=[
                 ("Platform", "A secure service that partner carriers use to support Samsung phone "
                  "customers."),
@@ -253,7 +253,7 @@ SITE = dict(
         dict(
             kind="prod", where="Samsung R&D Philippines",
             title="Internal AI tooling and automation",
-            metric="Feature workflows · sprint tools · test automation",
+            metric="Feature workflows, sprint tools, test automation",
             rows=[
                 ("Problem", "Team workflows, from building new features to sprint ceremonies and testing, "
                  "relied on slow, repetitive manual steps."),
@@ -266,7 +266,7 @@ SITE = dict(
         ),
         dict(
             kind="side", project="Retail Sales & Inventory Site",
-            metric="Dashboards · weekly owners' report · staff scheduler · Excel export",
+            metric="Dashboards, weekly owners' report, staff scheduler, Excel export",
             rows=[
                 ("Problem", "The retailer's data partner sends daily ERP exports in a format that doesn't "
                  "match what the merchandising manager, the site's user, needs to see. My earlier "

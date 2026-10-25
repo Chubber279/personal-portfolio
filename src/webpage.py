@@ -65,7 +65,7 @@ def _creds() -> list[str]:
     """Credential cards: (label, title, html body)."""
     ed, pub = c.EDUCATION, c.PUBLICATION
     cards = [
-        ("Education", ed["degree"], escape(f"{ed['school']}, {ed['dates']}. {ed['detail']}.")),
+        ("Education", ed["degree"], escape(f"{ed['school']}, {ed['dates']}. {ed['detail'].replace(' · ', '. ')}.")),
         ("Publication", f"{pub['short_venue']} (IEEE)",
          f'{escape(pub["title"])}. <a href="{escape(pub["doi_url"])}" rel="noopener">IEEE Xplore</a>'),
     ]
@@ -83,7 +83,7 @@ def _creds() -> list[str]:
 
 def _cert_note() -> str:
     """Certifications folded into one line under the credential cards."""
-    certs = "; ".join(f"{name} · {issuer}, {when}" for name, issuer, when in c.CERTIFICATIONS)
+    certs = "; ".join(f"{name}, {issuer}, {when}" for name, issuer, when in c.CERTIFICATIONS)
     return f'<p class="cred-note reveal"><span class="cred-label">Certification</span>{escape(certs)}</p>'
 
 
