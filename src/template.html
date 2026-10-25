@@ -6,14 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>$name — $title</title>
   <meta name="description" content="$description">
-  <meta name="theme-color" content="#111111">
+  <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d0c0b" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:title" content="$name — $title">
   <meta property="og:description" content="$og_description">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="styles.css">
   <script>
     // Theme before paint (no flash); flag JS so reveal animations never hide content without it.
@@ -88,13 +89,6 @@ $jsonld
         </div>
 
         <aside class="profile-card reveal" aria-label="At a glance">
-          <div class="profile-top">
-            <span class="avatar" aria-hidden="true">$initials</span>
-            <div>
-              <p class="profile-name">$short_name</p>
-              <p class="profile-role">$employer</p>
-            </div>
-          </div>
           <dl class="profile-meta">
 $profile_meta
           </dl>
@@ -156,6 +150,7 @@ $skills
         <div class="creds">
 $creds
         </div>
+        $cert_note
       </div>
     </section>
 
@@ -171,7 +166,6 @@ $creds
             <a class="btn ghost" href="$linkedin_url" rel="noopener">LinkedIn</a>
             <a class="btn ghost" href="$github_url" rel="noopener">GitHub</a>
             <a class="btn ghost" href="$resume_pdf" download>Resume (PDF)</a>
-            <a class="btn ghost" href="$cv_pdf" download>CV (PDF)</a>
           </p>
         </div>
       </div>

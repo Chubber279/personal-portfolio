@@ -64,14 +64,11 @@ def _job(job: dict) -> list[str]:
 def _creds() -> list[str]:
     """Credential cards: (label, title, html body)."""
     ed, pub = c.EDUCATION, c.PUBLICATION
-    cards = [("Education", ed["degree"], escape(f"{ed['school']}, {ed['dates']}. {ed['detail']}."))]
-    cards += [("Certification", name, escape(f"{issuer}, {when}.")) for name, issuer, when in c.CERTIFICATIONS]
-    cards.append((
-        "Publication", f"{pub['short_venue']} (IEEE)",
-        f'{escape(pub["title"])}. <a href="{escape(pub["doi_url"])}" rel="noopener">IEEE Xplore</a>',
-    ))
-    cards.append(("Languages", " · ".join(a for a, _ in c.LANGUAGES),
-                  escape("; ".join(f"{a}: {b}" for a, b in c.LANGUAGES) + ".")))
+    cards = [
+        ("Education", ed["degree"], escape(f"{ed['school']}, {ed['dates']}. {ed['detail']}.")),
+        ("Publication", f"{pub['short_venue']} (IEEE)",
+         f'{escape(pub["title"])}. <a href="{escape(pub["doi_url"])}" rel="noopener">IEEE Xplore</a>'),
+    ]
     out = []
     for label, title, body in cards:
         out += [
@@ -82,6 +79,12 @@ def _creds() -> list[str]:
             "</div>",
         ]
     return out
+
+
+def _cert_note() -> str:
+    """Certifications folded into one line under the credential cards."""
+    certs = "; ".join(f"{name} · {issuer}, {when}" for name, issuer, when in c.CERTIFICATIONS)
+    return f'<p class="cred-note reveal"><span class="cred-label">Certification</span>{escape(certs)}</p>'
 
 
 def _jsonld() -> str:
@@ -108,7 +111,7 @@ def render(documents_href: str) -> str:
     work = [line for w in s["work"] for line in _work_card(w)]
     skills = [
         f'<div class="skill-row reveal"><h3>{escape(label)}</h3><ul class="chips">{chips(items)}</ul></div>'
-        for label, items in c.SKILLS
+        for label, items in s["skills"]
     ]
     return Template(TEMPLATE.read_text(encoding="utf-8")).substitute(
         name=escape(c.NAME),
@@ -124,8 +127,6 @@ def render(documents_href: str) -> str:
         linkedin_url=escape(c.LINKEDIN[1]),
         github_url=escape(c.GITHUB[1]),
         resume_pdf=f"{documents_href}/{c.RESUME_STEM}.pdf",
-        cv_pdf=f"{documents_href}/{c.CV_STEM}.pdf",
-        employer=escape(c.EXPERIENCE[0]["company"]),
         profile_meta=indent([f"<div><dt>{escape(k)}</dt><dd>{escape(v)}</dd></div>" for k, v in s["profile"]], 12),
         core_stack=chips(s["core_stack"]),
         about_heading=escape(s["about_heading"]),
@@ -135,6 +136,7 @@ def render(documents_href: str) -> str:
         experience=indent([line for job in c.EXPERIENCE for line in _job(job)], 10),
         skills=indent(skills, 10),
         creds=indent(_creds(), 10),
+        cert_note=_cert_note(),
         contact_heading=escape(s["contact_heading"]),
         contact=escape(s["contact"]),
         year=dt.date.today().year,

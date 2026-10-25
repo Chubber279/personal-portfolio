@@ -6,14 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lorenzo Miguel Ocampo — Full Stack Software Engineer</title>
   <meta name="description" content="Full stack software engineer (Java/Spring Boot, Vue.js, AWS) based in the Philippines, open to remote roles. Case studies and experience.">
-  <meta name="theme-color" content="#111111">
+  <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d0c0b" media="(prefers-color-scheme: dark)">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Lorenzo Miguel Ocampo — Full Stack Software Engineer">
   <meta property="og:description" content="Production systems in Java/Spring Boot, Vue.js and AWS. AI-assisted automation. Open to remote roles.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="styles.css">
   <script>
     // Theme before paint (no flash); flag JS so reveal animations never hide content without it.
@@ -108,20 +109,13 @@
         </div>
 
         <aside class="profile-card reveal" aria-label="At a glance">
-          <div class="profile-top">
-            <span class="avatar" aria-hidden="true">LO</span>
-            <div>
-              <p class="profile-name">Lorenzo Ocampo</p>
-              <p class="profile-role">Samsung R&amp;D Philippines</p>
-            </div>
-          </div>
           <dl class="profile-meta">
             <div><dt>Location</dt><dd>Philippines (UTC+8)</dd></div>
             <div><dt>Work setup</dt><dd>Remote · contractor or employer of record</dd></div>
             <div><dt>Visa</dt><dd>No sponsorship needed for remote work</dd></div>
-            <div><dt>Languages</dt><dd>English, Filipino, Japanese (N5)</dd></div>
+            <div><dt>Languages</dt><dd>English, Filipino</dd></div>
           </dl>
-          <ul class="chips compact" aria-label="Core stack"><li>Java</li><li>Spring Boot</li><li>Vue.js</li><li>AWS</li><li>Python</li><li>Claude</li></ul>
+          <ul class="chips compact" aria-label="Core stack"><li>Java</li><li>Spring Boot</li><li>Vue.js</li><li>AWS</li><li>Python</li></ul>
         </aside>
       </div>
     </section>
@@ -131,11 +125,12 @@
       <div class="wrap split">
         <header class="section-head">
           <p class="kicker">01 · About</p>
-          <h2>Engineer first, increasingly the person who plans the work</h2>
+          <h2>I turn vague requests into plans, and repetitive work into software</h2>
         </header>
         <div class="prose reveal">
-          <p>I&#x27;m a full stack engineer with production experience across enterprise platforms at Samsung and an airline ticketing platform. I&#x27;m comfortable across the stack: Spring Boot and .NET on the backend, Vue.js and React on the frontend, and AWS (Lambda, SQS, KMS, S3, Athena) underneath.</p>
-          <p>Beyond building, I also own quarterly planning, feature scoping and breakdown, and onboarding of new hires on my team, and I work as an associate technical project manager / product owner coordinating across teams. That means I write for two audiences: engineers who need clear tasks, and stakeholders who need clear status.</p>
+          <p>I&#x27;m a full stack engineer who likes the part before the code: taking a vague request, turning it into a plan the team can execute, and finding the manual, repetitive steps that software should be doing instead.</p>
+          <p>I write things down. Decisions, workflows and the reasons behind them go into documentation the whole team can use, so knowledge outlasts any one person or sprint. That habit is part of why I now own quarterly planning, feature scoping and new-hire onboarding, and work as an associate technical project manager / product owner.</p>
+          <p>Next, I want a role with more product ownership, or one centred on AI-assisted software development. Outside work, I keep solving problems with software;</p>
         </div>
       </div>
     </section>
@@ -146,41 +141,36 @@
         <header class="section-head">
           <p class="kicker">02 · Selected work</p>
           <h2>Problems I've solved</h2>
-          <p class="section-intro">Three production projects and two self-directed builds. Employer work is described at the level I&#x27;m able to share publicly.</p>
+          <p class="section-intro">Production systems, and the tools I build to remove manual, inefficient work around them.</p>
         </header>
         <div class="cards">
           <article class="card reveal">
             <p class="card-tag"><span class="badge prod">Production</span>Samsung R&amp;D Philippines</p>
-            <h3>Samsung SIM Unlock (SSU) project</h3>
+            <h3>Carrier Services Platform</h3>
             <p class="metric">Task-force lead · frontend and backend</p>
-            <dl><div><dt>Role</dt><dd>Leads the task force for the project.</dd></div><div><dt>Built</dt><dd>The Vue.js frontend and Java/Spring Boot backend, on AWS.</dd></div></dl>
+            <dl><div><dt>Platform</dt><dd>A secure service that partner carriers use to support Samsung phone customers.</dd></div><div><dt>Role</dt><dd>Leads the platform&#x27;s main task force, which adds new capabilities, and builds and maintains admin-portal features.</dd></div><div><dt>Built</dt><dd>The frontend for the task force&#x27;s new pages (analytics dashboards, a manual override tool for device requests and a per-device history log) and the history log&#x27;s backend. In the admin portal: carrier certificate management and access control.</dd></div></dl>
             <ul class="chips" aria-label="Stack"><li>Vue.js</li><li>Java</li><li>Spring Boot</li><li>AWS</li></ul>
           </article>
           <article class="card reveal">
             <p class="card-tag"><span class="badge prod">Production</span>Samsung R&amp;D Philippines</p>
-            <h3>AI-assisted support and testing automation</h3>
-            <dl><div><dt>Problem</dt><dd>Customer-ticket (VOC) investigations and endpoint testing involve repeated manual steps.</dd></div><div><dt>Built</dt><dd>Scripts that automate those steps, which I regularly build and extend with AI-assisted development.</dd></div></dl>
-            <ul class="chips" aria-label="Stack"><li>Scripting</li><li>SQL</li><li>AI-assisted development</li></ul>
-          </article>
-          <article class="card reveal">
-            <p class="card-tag"><span class="badge prod">Production</span>Samsung R&amp;D Philippines</p>
-            <h3>Admin portal: carrier certificate management</h3>
-            <dl><div><dt>Problem</dt><dd>The admin portal needs carrier certificate management and control over who can do what.</dd></div><div><dt>Built</dt><dd>Carrier certificate management and access control features, which I build and maintain.</dd></div></dl>
-            <ul class="chips" aria-label="Stack"><li>Spring Boot</li><li>Vue.js</li><li>AWS</li></ul>
+            <h3>Internal AI tooling and automation</h3>
+            <p class="metric">Feature workflows · sprint tools · test automation</p>
+            <dl><div><dt>Problem</dt><dd>Team workflows, from building new features to sprint ceremonies and testing, relied on slow, repetitive manual steps.</dd></div><div><dt>Built</dt><dd>Solutions I regularly design and ship: AI workflows for new-feature development, sprint retro and planning websites tailored to how the team runs them, test and test-document automation with its own UI, and other AI tools.</dd></div><div><dt>Impact</dt><dd>All of them are in regular use by the team.</dd></div></dl>
+            <ul class="chips" aria-label="Stack"><li>Python</li><li>JavaScript</li><li>HTML/CSS</li><li>AI-assisted development</li></ul>
           </article>
           <article class="card reveal">
             <p class="card-tag"><span class="badge side">Side project</span></p>
             <h3>Retail Sales &amp; Inventory Site</h3>
             <p class="metric">Dashboards · weekly owners&#x27; report · Excel export</p>
             <dl><div><dt>Problem</dt><dd>A multi-brand fashion retailer&#x27;s daily ERP exports were only usable through Excel reports, and an earlier Streamlit and PostgreSQL app never ran reliably.</dd></div><div><dt>Built</dt><dd>A local web app that imports the exports, shows sales, inventory and sell-through, and produces the weekly owners&#x27; report. It reuses the existing ETL cleaning code, so its numbers match the Excel reports. Built with AI-assisted development; I maintain it.</dd></div></dl>
-            <ul class="chips" aria-label="Stack"><li>Python</li><li>FastAPI</li><li>SQLite</li><li>Vue.js</li><li>Claude</li></ul>
+            <ul class="chips" aria-label="Stack"><li>Python</li><li>FastAPI</li><li>SQLite</li><li>Vue.js</li></ul>
           </article>
           <article class="card reveal">
             <p class="card-tag"><span class="badge side">Side project</span></p>
             <h3>Staff Scheduling Application</h3>
-            <p class="metric">Auto-fill scheduling · REST API · browser UI</p>
+            <p class="metric">Being integrated into the Retail Sales &amp; Inventory Site</p>
             <dl><div><dt>Problem</dt><dd>Store shifts and sales-associate assignments were scheduled by hand.</dd></div><div><dt>Built</dt><dd>A web app with an auto-fill scheduling algorithm, a REST API and a browser frontend for managing shifts and assignments.</dd></div></dl>
-            <ul class="chips" aria-label="Stack"><li>Node.js</li><li>SQLite</li><li>REST API</li><li>Claude</li></ul>
+            <ul class="chips" aria-label="Stack"><li>Node.js</li><li>SQLite</li><li>REST API</li></ul>
           </article>
         </div>
       </div>
@@ -201,8 +191,8 @@
             </div>
             <p class="org">Samsung R&amp;D Philippines</p>
             <ul>
-              <li>Leads the Samsung SIM Unlock (SSU) task force and builds admin-portal features such as carrier certificate management and access control, across a Vue.js frontend and a Spring Boot backend on AWS.</li>
-              <li>Handles client and stakeholder requests through production debugging and direct database fixes, and regularly builds AI-assisted scripts that speed up ticket resolution and endpoint testing.</li>
+              <li>Leads a project task force and builds admin-portal features such as carrier certificate management and access control, across a Vue.js frontend and a Spring Boot backend on AWS.</li>
+              <li>Handles client and stakeholder requests through production debugging and direct database fixes, and regularly analyzes manual workflows and improves them with AI-assisted automation.</li>
               <li>Owns quarterly planning, feature scoping and new-hire onboarding; as associate technical PM / product owner, runs meetings, presents reports and coordinates work across teams.</li>
             </ul>
           </li>
@@ -213,10 +203,10 @@
             </div>
             <p class="org">Aeronology Philippines Inc</p>
             <ul>
-              <li>Built and extended booking and ticketing features on an airline ticketing platform, working across a .NET/C# and SQL/MySQL backend, a React.js frontend, Python and AWS.</li>
-              <li>Integrated South African Airlines into the platform, extending access to international routes.</li>
-              <li>Supported production by investigating incidents and shipping hotfixes, reducing downtime and improving reliability.</li>
-              <li>Handled client and stakeholder requests, and kept quality up by reviewing teammates&#x27; code, testing releases and improving backend code and documentation.</li>
+              <li>Built and extended booking and ticketing features on an airline ticketing platform used by travel agencies, working across a .NET/C# and SQL/MySQL backend, a React.js frontend, Python and AWS.</li>
+              <li>Owned the LIFT Airlines integration end to end, so travel agencies could book LIFT flights through the platform.</li>
+              <li>Investigated production incidents, mostly flight-detail mismatches from airline API data, and shipped fixes that handle incomplete data so the same errors stopped recurring.</li>
+              <li>Reviewed teammates&#x27; code, tested releases and improved backend code and documentation.</li>
             </ul>
           </li>
         </ol>
@@ -234,10 +224,8 @@
           <div class="skill-row reveal"><h3>Languages</h3><ul class="chips"><li>Java</li><li>JavaScript</li><li>Python</li><li>C#</li></ul></div>
           <div class="skill-row reveal"><h3>Frameworks</h3><ul class="chips"><li>Spring Boot</li><li>Vue.js</li><li>React.js</li><li>Node.js</li><li>.NET</li><li>FastAPI</li></ul></div>
           <div class="skill-row reveal"><h3>Data</h3><ul class="chips"><li>MySQL</li><li>DynamoDB</li><li>Aurora RDS</li><li>SQLite</li></ul></div>
-          <div class="skill-row reveal"><h3>Cloud (AWS)</h3><ul class="chips"><li>Lambda</li><li>SQS</li><li>KMS</li><li>S3</li><li>Athena</li></ul></div>
-          <div class="skill-row reveal"><h3>AI-assisted development</h3><ul class="chips"><li>Claude</li><li>Cline</li><li>prompt design</li><li>workflow automation</li><li>code review</li></ul></div>
-          <div class="skill-row reveal"><h3>Practices &amp; tools</h3><ul class="chips"><li>REST APIs</li><li>Agile/Scrum</li><li>Git/GitHub</li><li>Postman</li><li>Figma</li><li>Jira</li><li>Confluence</li></ul></div>
-          <div class="skill-row reveal"><h3>Delivery &amp; leadership</h3><ul class="chips"><li>Quarterly/feature planning</li><li>cross-team coordination</li><li>status reporting</li><li>mentoring</li><li>documentation</li></ul></div>
+          <div class="skill-row reveal"><h3>Cloud (AWS)</h3><ul class="chips"><li>EC2</li><li>Lambda</li><li>SQS</li><li>KMS</li><li>S3</li><li>Athena</li></ul></div>
+          <div class="skill-row reveal"><h3>Practices &amp; tools</h3><ul class="chips"><li>REST APIs</li><li>Agile/Scrum</li><li>Claude</li><li>Cline</li></ul></div>
         </div>
         <div class="creds">
           <div class="cred reveal">
@@ -246,21 +234,12 @@
             <p>University of the Philippines Los Baños, 2019 – 2023. Cum Laude · GWA 1.61 (1.0 = highest) · DOST-SEI MERIT Scholarship Grantee.</p>
           </div>
           <div class="cred reveal">
-            <p class="cred-label">Certification</p>
-            <p class="cred-title">AWS Certified AI Practitioner</p>
-            <p>Amazon Web Services, 2025.</p>
-          </div>
-          <div class="cred reveal">
             <p class="cred-label">Publication</p>
             <p class="cred-title">ICCCI 2024 (IEEE)</p>
             <p>A Novel Automatic Definition Selector and Scoring Scheme for the Identification of Filipino Metaphors. <a href="https://ieeexplore.ieee.org/document/10674510" rel="noopener">IEEE Xplore</a></p>
           </div>
-          <div class="cred reveal">
-            <p class="cred-label">Languages</p>
-            <p class="cred-title">English · Filipino · Japanese</p>
-            <p>English: Native / full professional proficiency; Filipino: Native; Japanese: Elementary, JLPT N5.</p>
-          </div>
         </div>
+        <p class="cred-note reveal"><span class="cred-label">Certification</span>AWS Certified AI Practitioner · Amazon Web Services, 2025</p>
       </div>
     </section>
 
@@ -270,13 +249,12 @@
         <div class="cta reveal">
           <p class="kicker">05 · Contact</p>
           <h2>Let&#x27;s talk about your team</h2>
-          <p>I&#x27;m looking for a fully remote, product-focused engineering role. Authorized to work in the Philippines, available as a contractor or through an employer of record, and no visa sponsorship needed. The fastest way to reach me is email.</p>
+          <p>I&#x27;m looking for a fully remote, product-focused engineering role. The fastest way to reach me is email.</p>
           <p class="actions">
             <a class="btn primary on-dark" href="mailto:lorenzo.ocampo279@gmail.com">lorenzo.ocampo279@gmail.com</a>
             <a class="btn ghost" href="https://www.linkedin.com/in/lmlocampo/" rel="noopener">LinkedIn</a>
             <a class="btn ghost" href="https://github.com/Chubber279" rel="noopener">GitHub</a>
             <a class="btn ghost" href="documents/Lorenzo_Ocampo_Resume_2026.pdf" download>Resume (PDF)</a>
-            <a class="btn ghost" href="documents/Lorenzo_Ocampo_CV_2026.pdf" download>CV (PDF)</a>
           </p>
         </div>
       </div>

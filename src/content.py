@@ -9,8 +9,13 @@ Shared data (contact, skills, experience, projects, education, publication, cert
 languages) feeds both outputs. The SITE block holds copy that only the website uses.
 
 Emphasis rules (2026-10-21): dates only for employment, education and the certification/paper (years,
-no months), none on projects or features; the IEEE paper is a minor credential; SSU is described as
-a whole project, not by its features.
+no months), none on projects or features; the IEEE paper is a minor credential.
+
+Confidentiality (2026-10-25): the Samsung project is classified. Never name it (no project name or
+acronym) in any output or anywhere in this repo. Its public umbrella name is "Carrier Services
+Platform"; the task force is its main part and the admin portal is part of it.
+AI-assisted work at Samsung is an ongoing practice (analyzing manual workflows for problems and
+improving them with AI), not a fixed list of tasks such as tickets or endpoint testing.
 
 Writing rules (approved 2026-10-22; apply to resume, CV, site copy and any tailored version; check
 every line against them before saving):
@@ -55,19 +60,19 @@ SUMMARY = (
     "Full stack software engineer with 2+ years building and supporting production systems in "
     "Java/Spring Boot, Vue.js and AWS, currently at Samsung R&D and previously on an airline ticketing "
     "platform. Builds features across the frontend and backend, handles client and stakeholder "
-    "requests, and regularly uses AI-assisted automation to speed up support and testing. Also owns "
+    "requests, and regularly improves manual workflows with AI-assisted automation. Also owns "
     "quarterly planning and new-hire onboarding, and works as an associate technical PM / product "
     "owner across teams. Strong written English; seeking a fully remote, product-focused role."
 )
 
 # --------------------------------------------------------------------------- skills
-# Documents print "Label: a, b, c" exactly as written; the site shows each item as a tag with the
-# first letter capitalized.
+# Documents print "Label: a, b, c" exactly as written. The site uses the trimmed SITE["skills"] and
+# shows each item as a tag with the first letter capitalized.
 SKILLS = [
     ("Languages", ["Java", "JavaScript", "Python", "C#"]),
     ("Frameworks", ["Spring Boot", "Vue.js", "React.js", "Node.js", ".NET", "FastAPI"]),
     ("Data", ["MySQL", "DynamoDB", "Aurora RDS", "SQLite"]),
-    ("Cloud (AWS)", ["Lambda", "SQS", "KMS", "S3", "Athena"]),
+    ("Cloud (AWS)", ["EC2", "Lambda", "SQS", "KMS", "S3", "Athena"]),
     ("AI-assisted development", ["Claude", "Cline", "prompt design", "workflow automation", "code review"]),
     ("Practices & tools", ["REST APIs", "Agile/Scrum", "Git/GitHub", "Postman", "Figma", "Jira",
                            "Confluence"]),
@@ -84,22 +89,21 @@ EXPERIENCE = [
         dates="2025 – Present",
         location="Philippines",
         resume=[
-            "Leads the Samsung SIM Unlock (SSU) task force and builds admin-portal features such as "
-            "carrier certificate management and access control, across a Vue.js frontend and a Spring "
-            "Boot backend on AWS",
+            "Leads a project task force and builds admin-portal features such as carrier certificate "
+            "management and access control, across a Vue.js frontend and a Spring Boot backend on AWS",
             "Handles client and stakeholder requests through production debugging and direct database "
-            "fixes, and regularly builds AI-assisted scripts that speed up ticket resolution and endpoint "
-            "testing",
+            "fixes, and regularly analyzes manual workflows and improves them with AI-assisted automation",
             "Owns quarterly planning, feature scoping and new-hire onboarding; as associate technical "
             "PM / product owner, runs meetings, presents reports and coordinates work across teams",
         ],
         cv=[
-            "Leads the Samsung SIM Unlock (SSU) task force, building its Vue.js frontend and Java/Spring "
-            "Boot backend on AWS",
+            "Leads the main task force on a carrier services platform, building the frontend for its "
+            "new pages in Vue.js and a per-device history log in Java/Spring Boot on AWS",
             "Builds and maintains carrier certificate management and access control for the admin portal",
             "Handles client and stakeholder requests through production debugging and direct database "
             "fixes",
-            "Regularly builds AI-assisted scripts that speed up ticket resolution and endpoint testing",
+            "Regularly analyzes manual team workflows for slow or repetitive steps and improves them "
+            "with AI-assisted automation",
             "Owns quarterly planning, scoping new features and breaking them down into tasks",
             "Onboards and teaches new hires joining the team",
             "Works as associate technical PM / product owner on a live project: sets up meetings, "
@@ -116,21 +120,23 @@ EXPERIENCE = [
         dates="2023 – 2025",
         location="Philippines",
         resume=[
-            "Built and extended booking and ticketing features on an airline ticketing platform, working "
-            "across a .NET/C# and SQL/MySQL backend, a React.js frontend, Python and AWS",
-            "Integrated South African Airlines into the platform, extending access to international routes",
-            "Supported production by investigating incidents and shipping hotfixes, reducing downtime and "
-            "improving reliability",
-            "Handled client and stakeholder requests, and kept quality up by reviewing teammates' code, "
-            "testing releases and improving backend code and documentation",
+            "Built and extended booking and ticketing features on an airline ticketing platform used by "
+            "travel agencies, working across a .NET/C# and SQL/MySQL backend, a React.js frontend, "
+            "Python and AWS",
+            "Owned the LIFT Airlines integration end to end, so travel agencies could book LIFT flights "
+            "through the platform",
+            "Investigated production incidents, mostly flight-detail mismatches from airline API data, "
+            "and shipped fixes that handle incomplete data so the same errors stopped recurring",
+            "Reviewed teammates' code, tested releases and improved backend code and documentation",
         ],
         cv=[
-            "Built and extended booking and ticketing features on an airline ticketing platform "
-            "(.NET/C#, React.js, SQL/MySQL, Python, AWS)",
-            "Integrated South African Airlines into the platform, extending access to international routes",
-            "Investigated production incidents and shipped hotfixes and targeted fixes, reducing downtime "
-            "and improving system reliability",
-            "Handled client and stakeholder requests alongside feature work",
+            "Built and extended booking and ticketing features on an airline ticketing platform used by "
+            "travel agencies (.NET/C#, React.js, SQL/MySQL, Python, AWS)",
+            "Owned the LIFT Airlines integration end to end, so travel agencies could book LIFT flights "
+            "through the platform",
+            "Investigated production incidents, mostly flight-detail mismatches caused by airline API "
+            "data, and shipped hotfixes that handle incomplete data so the same errors stopped recurring",
+            "Handled travel-agency client requests alongside feature work",
             "Reviewed teammates' code and tested releases before deployment",
             "Improved backend code and documentation, making the codebase easier to read and work on",
         ],
@@ -142,14 +148,14 @@ EXPERIENCE = [
 PROJECTS = [
     dict(
         name="Retail Sales & Inventory Site",
-        tech=["Python", "FastAPI", "SQLite", "Vue.js", "Claude"],
+        tech=["Python", "FastAPI", "SQLite", "Vue.js"],
         text="Builds and maintains a local web app for a multi-brand fashion retailer that turns daily "
         "ERP exports into sales, inventory and sell-through dashboards and a weekly owners' report, "
         "reusing the existing Python ETL cleaning code so its numbers match the Excel reports",
     ),
     dict(
         name="Staff Scheduling Application",
-        tech=["Node.js", "SQLite", "REST API", "Claude"],
+        tech=["Node.js", "SQLite", "REST API"],
         text="Built a scheduling app with an auto-fill algorithm, REST API and browser frontend for "
         "store shifts and staff assignments",
     ),
@@ -213,54 +219,53 @@ SITE = dict(
         ("Location", LOCATION),
         ("Work setup", "Remote · contractor or employer of record"),
         ("Visa", "No sponsorship needed for remote work"),
-        ("Languages", "English, Filipino, Japanese (N5)"),
+        ("Languages", "English, Filipino"),
     ],
-    core_stack=["Java", "Spring Boot", "Vue.js", "AWS", "Python", "Claude"],
-    about_heading="Engineer first, increasingly the person who plans the work",
+    core_stack=["Java", "Spring Boot", "Vue.js", "AWS", "Python"],
+    about_heading="I turn vague requests into plans, and repetitive work into software",
     about=[
-        "I'm a full stack engineer with production experience across enterprise platforms at Samsung "
-        "and an airline ticketing platform. I'm comfortable across the stack: Spring Boot and .NET on "
-        "the backend, Vue.js and React on the frontend, and AWS (Lambda, SQS, KMS, S3, Athena) underneath.",
-        "Beyond building, I also own quarterly planning, feature scoping and breakdown, and onboarding "
-        "of new hires on my team, and I work as an associate technical project manager / product "
-        "owner coordinating across teams. That means I write for two audiences: engineers who need "
-        "clear tasks, and stakeholders who need clear status.",
+        "I'm a full stack engineer who likes the part before the code: taking a vague request, turning "
+        "it into a plan the team can execute, and finding the manual, repetitive steps that software "
+        "should be doing instead.",
+        "I write things down. Decisions, workflows and the reasons behind them go into documentation the "
+        "whole team can use, so knowledge outlasts any one person or sprint. That habit is part of why I "
+        "now own quarterly planning, feature scoping and new-hire onboarding, and work as an associate "
+        "technical project manager / product owner.",
+        "Next, I want a role with more product ownership, or one centred on AI-assisted software "
+        "development. Outside work, I keep solving problems with software; the side projects below are "
+        "two of them.",
     ],
-    work_intro="Three production projects and two self-directed builds. Employer work is described at "
-    "the level I'm able to share publicly.",
+    work_intro="Production systems, and the tools I build to remove manual, inefficient work around them.",
     # kind: "prod" | "side". metric is optional.
     work=[
         dict(
             kind="prod", where="Samsung R&D Philippines",
-            title="Samsung SIM Unlock (SSU) project",
+            title="Carrier Services Platform",
             metric="Task-force lead · frontend and backend",
             rows=[
-                ("Role", "Leads the task force for the project."),
-                ("Built", "The Vue.js frontend and Java/Spring Boot backend, on AWS."),
+                ("Platform", "A secure service that partner carriers use to support Samsung phone "
+                 "customers."),
+                ("Role", "Leads the platform's main task force, which adds new capabilities, and builds "
+                 "and maintains admin-portal features."),
+                ("Built", "The frontend for the task force's new pages (analytics dashboards, a manual "
+                 "override tool for device requests and a per-device history log) and the history log's "
+                 "backend. In the admin portal: carrier certificate management and access control."),
             ],
             stack=["Vue.js", "Java", "Spring Boot", "AWS"],
         ),
         dict(
             kind="prod", where="Samsung R&D Philippines",
-            title="AI-assisted support and testing automation",
+            title="Internal AI tooling and automation",
+            metric="Feature workflows · sprint tools · test automation",
             rows=[
-                ("Problem", "Customer-ticket (VOC) investigations and endpoint testing involve repeated "
-                 "manual steps."),
-                ("Built", "Scripts that automate those steps, which I regularly build and extend with "
-                 "AI-assisted development."),
+                ("Problem", "Team workflows, from building new features to sprint ceremonies and testing, "
+                 "relied on slow, repetitive manual steps."),
+                ("Built", "Solutions I regularly design and ship: AI workflows for new-feature "
+                 "development, sprint retro and planning websites tailored to how the team runs them, "
+                 "test and test-document automation with its own UI, and other AI tools."),
+                ("Impact", "All of them are in regular use by the team."),
             ],
-            stack=["Scripting", "SQL", "AI-assisted development"],
-        ),
-        dict(
-            kind="prod", where="Samsung R&D Philippines",
-            title="Admin portal: carrier certificate management",
-            rows=[
-                ("Problem", "The admin portal needs carrier certificate management and control over who "
-                 "can do what."),
-                ("Built", "Carrier certificate management and access control features, which I build and "
-                 "maintain."),
-            ],
-            stack=["Spring Boot", "Vue.js", "AWS"],
+            stack=["Python", "JavaScript", "HTML/CSS", "AI-assisted development"],
         ),
         dict(
             kind="side", project="Retail Sales & Inventory Site",
@@ -276,7 +281,7 @@ SITE = dict(
         ),
         dict(
             kind="side", project="Staff Scheduling Application",
-            metric="Auto-fill scheduling · REST API · browser UI",
+            metric="Being integrated into the Retail Sales & Inventory Site",
             rows=[
                 ("Problem", "Store shifts and sales-associate assignments were scheduled by hand."),
                 ("Built", "A web app with an auto-fill scheduling algorithm, a REST API and a browser "
@@ -284,8 +289,11 @@ SITE = dict(
             ],
         ),
     ],
+    # Site skills: the shared rows minus soft skills and baseline tools (audit 2026-10-25). The
+    # documents keep the full SKILLS list for ATS keyword matching.
+    skills=[row for row in SKILLS if row[0] in ("Languages", "Frameworks", "Data", "Cloud (AWS)")]
+    + [("Practices & tools", ["REST APIs", "Agile/Scrum", "Claude", "Cline"])],
     contact_heading="Let's talk about your team",
-    contact="I'm looking for a fully remote, product-focused engineering role. Authorized to work in the "
-    "Philippines, available as a contractor or through an employer of record, and no visa sponsorship "
-    "needed. The fastest way to reach me is email.",
+    contact="I'm looking for a fully remote, product-focused engineering role. The fastest way to reach "
+    "me is email.",
 )

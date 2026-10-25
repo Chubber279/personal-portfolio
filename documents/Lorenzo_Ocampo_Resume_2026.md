@@ -14,14 +14,14 @@ Philippines (UTC+8) · Open to remote · +63 929 209 6391 · lorenzo.ocampo279@g
 
 ## Summary
 
-Full stack software engineer with 2+ years building and supporting production systems in Java/Spring Boot, Vue.js and AWS, currently at Samsung R&D and previously on an airline ticketing platform. Builds features across the frontend and backend, handles client and stakeholder requests, and regularly uses AI-assisted automation to speed up support and testing. Also owns quarterly planning and new-hire onboarding, and works as an associate technical PM / product owner across teams. Strong written English; seeking a fully remote, product-focused role.
+Full stack software engineer with 2+ years building and supporting production systems in Java/Spring Boot, Vue.js and AWS, currently at Samsung R&D and previously on an airline ticketing platform. Builds features across the frontend and backend, handles client and stakeholder requests, and regularly improves manual workflows with AI-assisted automation. Also owns quarterly planning and new-hire onboarding, and works as an associate technical PM / product owner across teams. Strong written English; seeking a fully remote, product-focused role.
 
 ## Skills
 
 - **Languages:** Java, JavaScript, Python, C#
 - **Frameworks:** Spring Boot, Vue.js, React.js, Node.js, .NET, FastAPI
 - **Data:** MySQL, DynamoDB, Aurora RDS, SQLite
-- **Cloud (AWS):** Lambda, SQS, KMS, S3, Athena
+- **Cloud (AWS):** EC2, Lambda, SQS, KMS, S3, Athena
 - **AI-assisted development:** Claude, Cline, prompt design, workflow automation, code review
 - **Practices & tools:** REST APIs, Agile/Scrum, Git/GitHub, Postman, Figma, Jira, Confluence
 - **Delivery & leadership:** Quarterly/feature planning, cross-team coordination, status reporting, mentoring, documentation
@@ -31,25 +31,25 @@ Full stack software engineer with 2+ years building and supporting production sy
 ### Samsung R&D Philippines — Full Stack Software Engineer
 *2025 – Present · Philippines*
 
-- Leads the Samsung SIM Unlock (SSU) task force and builds admin-portal features such as carrier certificate management and access control, across a Vue.js frontend and a Spring Boot backend on AWS
-- Handles client and stakeholder requests through production debugging and direct database fixes, and regularly builds AI-assisted scripts that speed up ticket resolution and endpoint testing
+- Leads a project task force and builds admin-portal features such as carrier certificate management and access control, across a Vue.js frontend and a Spring Boot backend on AWS
+- Handles client and stakeholder requests through production debugging and direct database fixes, and regularly analyzes manual workflows and improves them with AI-assisted automation
 - Owns quarterly planning, feature scoping and new-hire onboarding; as associate technical PM / product owner, runs meetings, presents reports and coordinates work across teams
 
 ### Aeronology Philippines Inc — Junior Software Engineer
 *2023 – 2025 · Philippines*
 
-- Built and extended booking and ticketing features on an airline ticketing platform, working across a .NET/C# and SQL/MySQL backend, a React.js frontend, Python and AWS
-- Integrated South African Airlines into the platform, extending access to international routes
-- Supported production by investigating incidents and shipping hotfixes, reducing downtime and improving reliability
-- Handled client and stakeholder requests, and kept quality up by reviewing teammates' code, testing releases and improving backend code and documentation
+- Built and extended booking and ticketing features on an airline ticketing platform used by travel agencies, working across a .NET/C# and SQL/MySQL backend, a React.js frontend, Python and AWS
+- Owned the LIFT Airlines integration end to end, so travel agencies could book LIFT flights through the platform
+- Investigated production incidents, mostly flight-detail mismatches from airline API data, and shipped fixes that handle incomplete data so the same errors stopped recurring
+- Reviewed teammates' code, tested releases and improved backend code and documentation
 
 ## Projects
 
-### Retail Sales & Inventory Site | Python, FastAPI, SQLite, Vue.js, Claude
+### Retail Sales & Inventory Site | Python, FastAPI, SQLite, Vue.js
 
 - Builds and maintains a local web app for a multi-brand fashion retailer that turns daily ERP exports into sales, inventory and sell-through dashboards and a weekly owners' report, reusing the existing Python ETL cleaning code so its numbers match the Excel reports
 
-### Staff Scheduling Application | Node.js, SQLite, REST API, Claude
+### Staff Scheduling Application | Node.js, SQLite, REST API
 
 - Built a scheduling app with an auto-fill algorithm, REST API and browser frontend for store shifts and staff assignments
 
