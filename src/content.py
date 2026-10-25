@@ -149,15 +149,11 @@ PROJECTS = [
     dict(
         name="Retail Sales & Inventory Site",
         tech=["Python", "FastAPI", "SQLite", "Vue.js"],
-        text="Builds and maintains a local web app for a multi-brand fashion retailer that turns daily "
-        "ERP exports into sales, inventory and sell-through dashboards and a weekly owners' report, "
-        "reusing the existing Python ETL cleaning code so its numbers match the Excel reports",
-    ),
-    dict(
-        name="Staff Scheduling Application",
-        tech=["Node.js", "SQLite", "REST API"],
-        text="Built a scheduling app with an auto-fill algorithm, REST API and browser frontend for "
-        "store shifts and staff assignments",
+        text="Builds and maintains a local web app for a multi-brand fashion retailer that reshapes its "
+        "data partner's daily ERP exports into the sales, inventory and sell-through views the "
+        "merchandising manager needs, plus a weekly owners' report, reusing the existing Python ETL "
+        "cleaning code so its numbers match the Excel reports; includes a staff scheduler with "
+        "auto-fill assignments that replaced hand and Excel scheduling",
     ),
 ]
 
@@ -232,8 +228,8 @@ SITE = dict(
         "now own quarterly planning, feature scoping and new-hire onboarding, and work as an associate "
         "technical project manager / product owner.",
         "Next, I want a role with more product ownership, or one centred on AI-assisted software "
-        "development. Outside work, I keep solving problems with software; the side projects below are "
-        "two of them.",
+        "development. Outside work, I keep solving problems with software; the retail site below is "
+        "one of them.",
     ],
     work_intro="Production systems, and the tools I build to remove manual, inefficient work around them.",
     # kind: "prod" | "side". metric is optional.
@@ -269,23 +265,20 @@ SITE = dict(
         ),
         dict(
             kind="side", project="Retail Sales & Inventory Site",
-            metric="Dashboards · weekly owners' report · Excel export",
+            metric="Dashboards · weekly owners' report · staff scheduler · Excel export",
             rows=[
-                ("Problem", "A multi-brand fashion retailer's daily ERP exports were only usable through "
-                 "Excel reports, and an earlier Streamlit and PostgreSQL app never ran reliably."),
-                ("Built", "A local web app that imports the exports, shows sales, inventory and "
-                 "sell-through, and produces the weekly owners' report. It reuses the existing ETL "
-                 "cleaning code, so its numbers match the Excel reports. Built with AI-assisted "
-                 "development; I maintain it."),
-            ],
-        ),
-        dict(
-            kind="side", project="Staff Scheduling Application",
-            metric="Being integrated into the Retail Sales & Inventory Site",
-            rows=[
-                ("Problem", "Store shifts and sales-associate assignments were scheduled by hand."),
-                ("Built", "A web app with an auto-fill scheduling algorithm, a REST API and a browser "
-                 "frontend for managing shifts and assignments."),
+                ("Problem", "The retailer's data partner sends daily ERP exports in a format that doesn't "
+                 "match what the merchandising manager, the site's user, needs to see. My earlier "
+                 "Streamlit and PostgreSQL version never ran reliably, and store schedules were still "
+                 "made by hand or in Excel."),
+                ("Built", "A local web app shaped around the merchandising manager's view rather than the "
+                 "partner's format: it imports the exports, reshapes them into the sales, inventory and "
+                 "sell-through views that manager works from, and produces the weekly owners' report. It reuses my "
+                 "existing ETL cleaning code, so its numbers match the Excel reports."),
+                ("Scheduler", "A better way to schedule than hand and Excel: day, week and roster views, "
+                 "auto-fill that proposes assignments and day offs, and Excel export in the layout the "
+                 "team already used. It started as a standalone app and now lives in the same site, so "
+                 "the client runs one app. Built with AI-assisted development; I maintain it."),
             ],
         ),
     ],

@@ -47,11 +47,7 @@ Full stack software engineer with 2+ years building and supporting production sy
 
 ### Retail Sales & Inventory Site | Python, FastAPI, SQLite, Vue.js
 
-- Builds and maintains a local web app for a multi-brand fashion retailer that turns daily ERP exports into sales, inventory and sell-through dashboards and a weekly owners' report, reusing the existing Python ETL cleaning code so its numbers match the Excel reports
-
-### Staff Scheduling Application | Node.js, SQLite, REST API
-
-- Built a scheduling app with an auto-fill algorithm, REST API and browser frontend for store shifts and staff assignments
+- Builds and maintains a local web app for a multi-brand fashion retailer that reshapes its data partner's daily ERP exports into the sales, inventory and sell-through views the merchandising manager needs, plus a weekly owners' report, reusing the existing Python ETL cleaning code so its numbers match the Excel reports; includes a staff scheduler with auto-fill assignments that replaced hand and Excel scheduling
 
 ## Education
 

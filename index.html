@@ -130,7 +130,7 @@
         <div class="prose reveal">
           <p>I&#x27;m a full stack engineer who likes the part before the code: taking a vague request, turning it into a plan the team can execute, and finding the manual, repetitive steps that software should be doing instead.</p>
           <p>I write things down. Decisions, workflows and the reasons behind them go into documentation the whole team can use, so knowledge outlasts any one person or sprint. That habit is part of why I now own quarterly planning, feature scoping and new-hire onboarding, and work as an associate technical project manager / product owner.</p>
-          <p>Next, I want a role with more product ownership, or one centred on AI-assisted software development. Outside work, I keep solving problems with software;</p>
+          <p>Next, I want a role with more product ownership, or one centred on AI-assisted software development.</p>
         </div>
       </div>
     </section>
@@ -161,16 +161,9 @@
           <article class="card reveal">
             <p class="card-tag"><span class="badge side">Side project</span></p>
             <h3>Retail Sales &amp; Inventory Site</h3>
-            <p class="metric">Dashboards · weekly owners&#x27; report · Excel export</p>
-            <dl><div><dt>Problem</dt><dd>A multi-brand fashion retailer&#x27;s daily ERP exports were only usable through Excel reports, and an earlier Streamlit and PostgreSQL app never ran reliably.</dd></div><div><dt>Built</dt><dd>A local web app that imports the exports, shows sales, inventory and sell-through, and produces the weekly owners&#x27; report. It reuses the existing ETL cleaning code, so its numbers match the Excel reports. Built with AI-assisted development; I maintain it.</dd></div></dl>
+            <p class="metric">Dashboards · weekly owners&#x27; report · staff scheduler · Excel export</p>
+            <dl><div><dt>Problem</dt><dd>The retailer&#x27;s data partner sends daily ERP exports in a format that doesn&#x27;t match what the merchandising manager, the site&#x27;s user, needs to see. Store schedules were still made by hand or in Excel.</dd></div><div><dt>Built</dt><dd>A personal web app shaped around the merchandising manager&#x27;s view rather than the partner&#x27;s format: it imports the exports, reshapes them into the sales, inventory and sell-through views that manager works from, and produces the weekly owners&#x27; report. It reuses my existing ETL cleaning code, so its numbers match the Excel reports.</dd></div><div><dt>Scheduler</dt><dd>A better way to schedule than hand and Excel: day, week and roster views, auto-fill that proposes assignments and day offs, and Excel export in the layout the team already used. It started as a standalone app and now lives in the same site, so the client runs one app. Built with AI-assisted development; I maintain it.</dd></div></dl>
             <ul class="chips" aria-label="Stack"><li>Python</li><li>FastAPI</li><li>SQLite</li><li>Vue.js</li></ul>
-          </article>
-          <article class="card reveal">
-            <p class="card-tag"><span class="badge side">Side project</span></p>
-            <h3>Staff Scheduling Application</h3>
-            <p class="metric">Being integrated into the Retail Sales &amp; Inventory Site</p>
-            <dl><div><dt>Problem</dt><dd>Store shifts and sales-associate assignments were scheduled by hand.</dd></div><div><dt>Built</dt><dd>A web app with an auto-fill scheduling algorithm, a REST API and a browser frontend for managing shifts and assignments.</dd></div></dl>
-            <ul class="chips" aria-label="Stack"><li>Node.js</li><li>SQLite</li><li>REST API</li></ul>
           </article>
         </div>
       </div>

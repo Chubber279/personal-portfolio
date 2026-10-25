@@ -291,7 +291,8 @@ svg { flex: none; }
 .card dd { margin: 0; font-size: 0.95rem; }
 .card .chips { margin-top: auto; padding-top: 0.75rem; }
 .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
-.card:last-child:nth-child(odd) dl { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.card:last-child:nth-child(odd) dl { max-width: 52rem; }
+.card:last-child:nth-child(odd) dl div { grid-template-columns: 6rem minmax(0, 1fr); }
 
 /* Hover is decorative and seen often: colour/shadow only, pointer devices only. */
 .card, .js .card.reveal { transition: border-color 300ms ease, box-shadow 500ms var(--ease-out), opacity 900ms var(--ease-out), transform 900ms var(--ease-out); }
@@ -412,8 +413,7 @@ svg { flex: none; }
   #site-nav a.nav-cta { margin: 0.5rem 0 0; text-align: center; }
   .cards, .creds { grid-template-columns: 1fr; }
   .card { padding: 1.75rem; }
-  .card:last-child:nth-child(odd) dl { grid-template-columns: 1fr; gap: 0.85rem; }
-  .card dl div { grid-template-columns: 1fr; gap: 0.15rem; }
+  .card dl div, .card:last-child:nth-child(odd) dl div { grid-template-columns: 1fr; gap: 0.15rem; }
   .js .cards .reveal:nth-child(2n), .js .creds .reveal:nth-child(2n) { transition-delay: 0ms; }
   .skill-row { grid-template-columns: 1fr; gap: 0.5rem; }
   .section { padding-block: 5.5rem; }
