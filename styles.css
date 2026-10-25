@@ -18,8 +18,8 @@
   --grain-filter: none;
   --radius: 2px;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-  --font-display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --font-text: "Inter", "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-text: "Geist", "Inter", "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
   color-scheme: light;
 }
 
@@ -71,7 +71,6 @@ body {
   background: var(--bg);
   color: var(--fg);
   font: 16px/1.7 var(--font-text);
-  font-feature-settings: "cv11", "ss01";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -83,7 +82,7 @@ body::after {
 }
 h1, h2, h3 {
   font-family: var(--font-display);
-  font-weight: 500; line-height: 1.05; margin: 0; letter-spacing: -0.015em;
+  font-weight: 400; line-height: 1.05; margin: 0; letter-spacing: -0.01em;
   text-wrap: balance;
 }
 p { margin: 0; text-wrap: pretty; }
@@ -123,7 +122,7 @@ svg { flex: none; }
   border: 1px solid var(--fg); color: var(--fg);
   font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 1rem; letter-spacing: 0.02em;
 }
-.brand-name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 500; letter-spacing: 0.01em; }
+.brand-name { font-family: var(--font-display); font-size: 1.35rem; font-weight: 400; letter-spacing: 0.01em; }
 
 #site-nav { margin-left: auto; }
 #site-nav ul { display: flex; align-items: center; gap: 0.5rem; list-style: none; margin: 0; padding: 0; }
@@ -220,8 +219,8 @@ svg { flex: none; }
 }
 
 .hero h1 {
-  font-size: clamp(3.25rem, 8vw, 6.9rem); margin-top: 1.75rem;
-  font-weight: 400; letter-spacing: -0.03em; line-height: 0.92;
+  font-size: clamp(3.5rem, 8.6vw, 7.6rem); margin-top: 1.75rem;
+  font-weight: 400; letter-spacing: -0.02em; line-height: 0.95;
 }
 .role {
   margin-top: 1.25rem; font-family: var(--font-display); font-style: italic;
@@ -261,13 +260,13 @@ svg { flex: none; }
   color: var(--muted); margin-bottom: 1.5rem;
 }
 .kicker::before { content: ""; width: 2.5rem; height: 1px; background: var(--accent); }
-.section-head h2, .cta h2 { font-size: clamp(2.4rem, 5vw, 3.9rem); font-weight: 400; letter-spacing: -0.025em; line-height: 1.02; }
+.section-head h2, .cta h2 { font-size: clamp(2.6rem, 5.4vw, 4.4rem); font-weight: 400; letter-spacing: -0.015em; line-height: 1.02; }
 .section-intro { color: var(--muted); margin-top: 1.5rem; font-size: 1.05rem; max-width: 38rem; }
 
 .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: 5rem; align-items: start; }
 .split .section-head { margin-bottom: 0; position: sticky; top: 7rem; }
 .prose p { color: var(--muted); font-size: 1.05rem; }
-.prose p:first-child { color: var(--fg); font-family: var(--font-display); font-size: 1.7rem; font-weight: 400; line-height: 1.42; letter-spacing: -0.005em; }
+.prose p:first-child { color: var(--fg); font-family: var(--font-display); font-size: 1.85rem; font-weight: 400; line-height: 1.35; letter-spacing: 0; }
 .prose p + p { margin-top: 1.75rem; }
 
 /* ---------- Cards ---------- */
@@ -283,7 +282,7 @@ svg { flex: none; }
   content: counter(card, decimal-leading-zero); margin-left: auto; padding-left: 1rem;
   font-family: var(--font-display); font-style: italic; font-size: 1.15rem; color: var(--faint);
 }
-.card h3 { font-size: 1.9rem; font-weight: 500; line-height: 1.1; }
+.card h3 { font-size: 2.15rem; font-weight: 400; line-height: 1.1; letter-spacing: 0; }
 .metric { padding: 0.8rem 0; border-block: 1px solid var(--border); color: var(--muted); font-size: 0.88rem; }
 .card dl { display: grid; gap: 0.85rem; margin: 0; }
 .card dl div { display: grid; grid-template-columns: 4.75rem minmax(0, 1fr); gap: 0.75rem; }
@@ -311,7 +310,7 @@ svg { flex: none; }
 }
 .timeline > li:first-child::before { background: var(--accent); border-color: var(--accent); }
 .tl-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.4rem 1.5rem; }
-.tl-head h3 { font-size: 2rem; font-weight: 500; }
+.tl-head h3 { font-size: 2.3rem; font-weight: 400; letter-spacing: 0; }
 .when { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); font-variant-numeric: tabular-nums; }
 .org { color: var(--muted); font-family: var(--font-display); font-style: italic; font-size: 1.25rem; margin-top: 0.35rem; }
 .timeline ul { margin: 1.4rem 0 0; padding-left: 1.2rem; color: var(--muted); max-width: 48rem; }
@@ -324,13 +323,13 @@ svg { flex: none; }
   display: grid; grid-template-columns: 17rem minmax(0, 1fr); gap: 1.5rem; align-items: baseline;
   padding-block: 1.35rem; border-bottom: 1px solid var(--border);
 }
-.skill-row h3 { font-size: 1.4rem; font-weight: 500; }
+.skill-row h3 { font-size: 1.55rem; font-weight: 400; letter-spacing: 0.005em; }
 .skill-row .chips { color: var(--fg); font-size: 0.95rem; }
 
 .creds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 4rem; margin-top: 5rem; }
 .cred { border-top: 1px solid var(--border-strong); padding-top: 1.5rem; }
 .cred-label { font-size: 0.64rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
-.cred-title { font-family: var(--font-display); font-weight: 500; font-size: 1.6rem; line-height: 1.2; margin: 0.6rem 0 0.5rem; }
+.cred-title { font-family: var(--font-display); font-weight: 400; font-size: 1.8rem; line-height: 1.2; margin: 0.6rem 0 0.5rem; }
 .cred-note {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4rem 1.25rem;
   margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border);
@@ -354,7 +353,7 @@ svg { flex: none; }
 }
 .cta .kicker { color: #a59e93; justify-content: center; }
 .cta .kicker::before, .cta .kicker::after { content: ""; width: 2.5rem; height: 1px; background: #c8a66b; }
-.cta h2 { color: #f6f2ea; font-size: clamp(2.6rem, 6vw, 4.6rem); }
+.cta h2 { color: #f6f2ea; font-size: clamp(2.8rem, 6.4vw, 5rem); }
 .cta > p:not(.kicker):not(.actions) { color: #b3aca1; max-width: 38rem; margin: 1.5rem auto 0; font-size: 1.05rem; text-wrap: balance; }
 .cta .actions { justify-content: center; margin-top: 3rem; }
 .btn.on-dark { background: #f3efe7; color: #0f0e0c; border-color: #f3efe7; text-transform: none; letter-spacing: 0.01em; font-size: 0.95rem; }

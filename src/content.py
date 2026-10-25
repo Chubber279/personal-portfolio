@@ -203,6 +203,8 @@ CV_STEM = "Lorenzo_Ocampo_CV_2026"
 
 # --------------------------------------------------------------------------- website-only copy
 SITE = dict(
+    # Public address of the deployed site. Must stay absolute: link previews ignore relative URLs.
+    url="https://chubber279.github.io/personal-portfolio/",
     description="Full stack software engineer (Java/Spring Boot, Vue.js, AWS) based in the Philippines, "
     "open to remote roles. Case studies and experience.",
     og_description="Production systems in Java/Spring Boot, Vue.js and AWS. AI-assisted automation. "
@@ -228,8 +230,7 @@ SITE = dict(
         "now own quarterly planning, feature scoping and new-hire onboarding, and work as an associate "
         "technical project manager / product owner.",
         "Next, I want a role with more product ownership, or one centred on AI-assisted software "
-        "development. Outside work, I keep solving problems with software; the retail site below is "
-        "one of them.",
+        "development.",
     ],
     work_intro="Production systems, and the tools I build to remove manual, inefficient work around them.",
     # kind: "prod" | "side". metric is optional.

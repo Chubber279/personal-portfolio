@@ -120,6 +120,7 @@ def render(documents_href: str) -> str:
         title=escape(c.TITLE),
         description=escape(s["description"]),
         og_description=escape(s["og_description"]),
+        site_url=escape(s["url"]),
         jsonld=_jsonld(),
         status=escape(s["status"]),
         lead=fmt(s["lead"]),
