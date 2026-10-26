@@ -34,7 +34,7 @@ Preview with `npx serve .`, or open `index.html` directly.
 | `src/webpage.py`, `src/template.html` | Website renderer and page shell |
 | `index.html` | Generated website — do not hand-edit |
 | `documents/` | Generated resume and CV; the site links the PDFs |
-| `styles.css` | Layout and theme (ivory and ink with one bronze accent; Cormorant Garamond headings, Rethink Sans interface text, Vollkorn prose, from Google Fonts). Light/dark follows the system; the toggle overrides and is saved |
+| `styles.css` | Layout and theme (blue-grey paper in light mode, blue-black in dark, ink and one steel-blue accent; Cormorant Garamond headings, Rethink Sans interface text, Vollkorn prose, from Google Fonts). Light/dark follows the system; the toggle overrides and is saved |
 | `script.js` | Theme toggle, mobile menu, scroll effects, footer year |
 | `assets/favicon.svg` | Site icon |
 | `assets/og-image.png` | 1200×630 link-preview image; referenced by absolute URL from `SITE["url"]` in `src/content.py` |

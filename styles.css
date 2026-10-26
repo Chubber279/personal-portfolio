@@ -1,22 +1,26 @@
 /* ---------- Theme tokens ----------
-   Palette: ivory (paper), ink, bronze (the one accent), near-black (the contact block).
+   Palette: blue-grey paper (light) or blue-black (dark), ink, one steel-blue accent, and a near-black contact block shared by both themes.
    Type: Rethink Sans for headings and interface text, Vollkorn for running prose. */
 :root {
-  --bg: #f6f4ef;               /* ivory */
-  --bg-alt: #efece5;
-  --surface: #fbfaf7;
-  --fg: #141311;               /* ink */
-  --muted: #5f5a53;
-  --faint: #6f6a62;
-  --border: #e2ddd3;
-  --border-strong: #cbc4b7;
-  --accent: #80622f;           /* bronze: status dot, production badge, credential labels, focus */
-  --ink: #141311;              /* primary buttons */
-  --ink-hover: #2c2925;
-  --ink-fg: #f6f4ef;
-  --pine: #0f0e0c;             /* contact block */
+  --bg: #e8eff4;               /* blue-grey */
+  --bg-alt: #dfe7ee;
+  --surface: #f3f7fa;
+  --fg: #12171c;               /* ink */
+  --muted: #4f5b66;
+  --faint: #5d6873;
+  --border: #d3dde6;
+  --border-strong: #b4c1cd;
+  --accent: #2f6690;           /* steel blue: status dot, production badge, credential labels, focus */
+  --ink: #12171c;              /* primary buttons */
+  --ink-hover: #27313b;
+  --ink-fg: #f3f7fa;
+  --pine: #0e1318;             /* contact block */
+  --cta-fg: #e3eaf0;
+  --cta-strong: #f3f7fa;       /* contact heading, primary button */
+  --cta-muted: #a7b3bf;
+  --cta-border: #222b34;
   --ring: color-mix(in srgb, var(--accent) 70%, transparent);
-  --shadow-menu: 0 24px 48px -32px rgba(40, 30, 15, 0.32);
+  --shadow-menu: 0 24px 48px -32px rgba(15, 25, 35, 0.32);
   --radius: 4px;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --font-heading: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
@@ -27,36 +31,36 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0d0c0b;
-    --bg-alt: #121110;
-    --surface: #161513;
-    --fg: #ece7df;
-    --muted: #a59e93;
-    --faint: #8a8379;
-    --border: #262420;
-    --border-strong: #3d3933;
-    --accent: #c8a66b;
-    --ink: #ece7df;
+    --bg: #0b0e11;
+    --bg-alt: #0f1317;
+    --surface: #141a1f;
+    --fg: #e3eaf0;
+    --muted: #9aa7b3;
+    --faint: #7f8c98;
+    --border: #222a31;
+    --border-strong: #36414b;
+    --accent: #7fb0d9;
+    --ink: #e3eaf0;
     --ink-hover: #ffffff;
-    --ink-fg: #0d0c0b;
+    --ink-fg: #0b0e11;
     --shadow-menu: 0 24px 48px -28px rgba(0, 0, 0, 0.85);
     color-scheme: dark;
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #0d0c0b;
-  --bg-alt: #121110;
-  --surface: #161513;
-  --fg: #ece7df;
-  --muted: #a59e93;
-  --faint: #8a8379;
-  --border: #262420;
-  --border-strong: #3d3933;
-  --accent: #c8a66b;
-  --ink: #ece7df;
+  --bg: #0b0e11;
+  --bg-alt: #0f1317;
+  --surface: #141a1f;
+  --fg: #e3eaf0;
+  --muted: #9aa7b3;
+  --faint: #7f8c98;
+  --border: #222a31;
+  --border-strong: #36414b;
+  --accent: #7fb0d9;
+  --ink: #e3eaf0;
   --ink-hover: #ffffff;
-  --ink-fg: #0d0c0b;
+  --ink-fg: #0b0e11;
   --shadow-menu: 0 24px 48px -28px rgba(0, 0, 0, 0.85);
   color-scheme: dark;
 }
@@ -318,15 +322,15 @@ svg { flex: none; }
 /* ---------- Contact ---------- */
 .cta {
   text-align: center; padding: 7rem 2rem; border-radius: var(--radius);
-  color: #ece7df; background: var(--pine); border: 1px solid #25231f;
+  color: var(--cta-fg); background: var(--pine); border: 1px solid var(--cta-border);
 }
-.cta h2 { color: #f6f2ea; font-size: clamp(3rem, 6.6vw, 5.6rem); }
-.cta > p:not(.actions) { color: #b3aca1; max-width: 38rem; margin: 1.5rem auto 0; font-size: 1.15rem; text-wrap: balance; }
+.cta h2 { color: var(--cta-strong); font-size: clamp(3rem, 6.6vw, 5.6rem); }
+.cta > p:not(.actions) { color: var(--cta-muted); max-width: 38rem; margin: 1.5rem auto 0; font-size: 1.15rem; text-wrap: balance; }
 .cta .actions { justify-content: center; margin-top: 3rem; }
-.btn.on-dark { background: #f3efe7; color: var(--pine); border-color: #f3efe7; }
+.btn.on-dark { background: var(--cta-strong); color: var(--pine); border-color: var(--cta-strong); }
 .btn.on-dark:hover { background: #ffffff; border-color: #ffffff; }
-.btn.ghost { background: transparent; color: #ece7df; border-color: rgba(236, 231, 223, 0.28); }
-.btn.ghost:hover { border-color: #ece7df; background: rgba(255, 255, 255, 0.05); }
+.btn.ghost { background: transparent; color: var(--cta-fg); border-color: color-mix(in srgb, var(--cta-fg) 28%, transparent); }
+.btn.ghost:hover { border-color: var(--cta-fg); background: rgba(255, 255, 255, 0.05); }
 
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--border); padding-block: 2.5rem; color: var(--muted); font-family: var(--font-display); font-size: 0.95rem; }
