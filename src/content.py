@@ -36,6 +36,9 @@ every line against them before saving):
 8. Bullets and descriptive sentences say "AI-assisted", never a specific AI tool (Cline, Claude), and
    carry no AWS service lists or step-by-step task details. The skills section may still list tools
    and services.
+9. Site copy never uses the first person (no "I", "me", "my", "Let's"): sentences take the implied
+   subject, as in rule 7 ("Builds", "Leads"), and the name may stand in where a subject is needed.
+   No contractions.
 
 Inline markup: **text** renders bold on the site. Only SITE copy uses it; documents never see it.
 """
@@ -210,9 +213,9 @@ SITE = dict(
     og_description="Production systems in Java/Spring Boot, Vue.js and AWS. AI-assisted automation. "
     "Open to remote roles.",
     status="Open to fully remote roles",
-    lead="I build and run production systems in **Java/Spring Boot**, **Vue.js** and **AWS**, and I "
-    "use AI tooling to remove slow, repetitive engineering work. Currently at Samsung R&D Philippines. "
-    "Looking for a fully remote, product-focused role.",
+    lead="Builds and runs production systems in **Java/Spring Boot**, **Vue.js** and **AWS**, and uses "
+    "AI-assisted automation to remove slow, repetitive engineering work. Currently at Samsung R&D "
+    "Philippines and open to fully remote, product-focused roles.",
     profile=[
         ("Location", LOCATION),
         ("Work setup", "Remote, as a contractor or through an employer of record"),
@@ -220,19 +223,19 @@ SITE = dict(
         ("Languages", "English, Filipino"),
     ],
     core_stack=["Java", "Spring Boot", "Vue.js", "AWS", "Python"],
-    about_heading="I turn vague requests into plans, and repetitive work into software",
+    about_heading="Turning vague requests into plans, and repetitive work into software",
     about=[
-        "I'm a full stack engineer who likes the part before the code: taking a vague request, turning "
-        "it into a plan the team can execute, and finding the manual, repetitive steps that software "
-        "should be doing instead.",
-        "I write things down. Decisions, workflows and the reasons behind them go into documentation the "
-        "whole team can use, so knowledge outlasts any one person or sprint. That habit is part of why I "
-        "now own quarterly planning, feature scoping and new-hire onboarding, and work as an associate "
-        "technical project manager / product owner.",
-        "Next, I want a role with more product ownership, or one centred on AI-assisted software "
+        "A full stack engineer focused on the work before the code: turning a vague request into a plan "
+        "the team can execute, and finding the manual, repetitive steps that software should handle "
+        "instead.",
+        "Documentation is part of the job. Decisions, workflows and the reasons behind them are written "
+        "up for the whole team, so knowledge outlasts any one person or sprint. The same practice carries "
+        "into current responsibilities: quarterly planning, feature scoping, new-hire onboarding, and the "
+        "role of associate technical project manager / product owner.",
+        "Seeking a role with greater product ownership, or one centred on AI-assisted software "
         "development.",
     ],
-    work_intro="Production systems, and the tools I build to remove manual, inefficient work around them.",
+    work_intro="Production systems, and the tools built to remove manual, inefficient work around them.",
     # kind: "prod" | "side". metric is optional.
     work=[
         dict(
@@ -257,9 +260,9 @@ SITE = dict(
             rows=[
                 ("Problem", "Team workflows, from building new features to sprint ceremonies and testing, "
                  "relied on slow, repetitive manual steps."),
-                ("Built", "Solutions I regularly design and ship: AI workflows for new-feature "
-                 "development, sprint retro and planning websites tailored to how the team runs them, "
-                 "test and test-document automation with its own UI, and other AI tools."),
+                ("Built", "An ongoing set of tools, regularly designed and shipped: AI workflows for "
+                 "new-feature development, sprint retro and planning websites tailored to how the team "
+                 "runs them, test and test-document automation with its own UI, and other AI tools."),
                 ("Impact", "All of them are in regular use by the team."),
             ],
             stack=["Python", "JavaScript", "HTML/CSS", "AI-assisted development"],
@@ -268,18 +271,19 @@ SITE = dict(
             kind="side", project="Retail Sales & Inventory Site",
             metric="Dashboards, weekly owners' report, staff scheduler, Excel export",
             rows=[
-                ("Problem", "The retailer's data partner sends daily ERP exports in a format that doesn't "
-                 "match what the merchandising manager, the site's user, needs to see. My earlier "
+                ("Problem", "The retailer's data partner sends daily ERP exports in a format that does not "
+                 "match what the merchandising manager, the site's user, needs to see. An earlier "
                  "Streamlit and PostgreSQL version never ran reliably, and store schedules were still "
                  "made by hand or in Excel."),
                 ("Built", "A local web app shaped around the merchandising manager's view rather than the "
                  "partner's format: it imports the exports, reshapes them into the sales, inventory and "
-                 "sell-through views that manager works from, and produces the weekly owners' report. It reuses my "
-                 "existing ETL cleaning code, so its numbers match the Excel reports."),
-                ("Scheduler", "A better way to schedule than hand and Excel: day, week and roster views, "
+                 "sell-through views that manager works from, and produces the weekly owners' report. It "
+                 "reuses the existing ETL cleaning code, so its numbers match the Excel reports."),
+                ("Scheduler", "Replaces scheduling by hand and in Excel: day, week and roster views, "
                  "auto-fill that proposes assignments and day offs, and Excel export in the layout the "
                  "team already used. It started as a standalone app and now lives in the same site, so "
-                 "the client runs one app. Built with AI-assisted development; I maintain it."),
+                 "the client runs one app. Built with AI-assisted development and maintained on an "
+                 "ongoing basis."),
             ],
         ),
     ],
@@ -287,7 +291,7 @@ SITE = dict(
     # documents keep the full SKILLS list for ATS keyword matching.
     skills=[row for row in SKILLS if row[0] in ("Languages", "Frameworks", "Data", "Cloud (AWS)")]
     + [("Practices & tools", ["REST APIs", "Agile/Scrum", "Claude", "Cline"])],
-    contact_heading="Let's talk about your team",
-    contact="I'm looking for a fully remote, product-focused engineering role. The fastest way to reach "
-    "me is email.",
+    contact_heading="Get in touch",
+    contact="Open to fully remote, product-focused engineering roles. Email is the fastest way to reach "
+    "Lorenzo.",
 )
