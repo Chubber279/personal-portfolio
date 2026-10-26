@@ -246,14 +246,19 @@ svg { flex: none; }
 .prose p { color: var(--muted); font-size: 1.12rem; line-height: 1.7; }
 .prose p:first-child { color: var(--fg); font-family: var(--font-heading); font-weight: 500; font-size: 2rem; line-height: 1.25; letter-spacing: -0.005em; }
 .prose p + p { margin-top: 1.75rem; }
+/* Running prose is justified and hyphenated (needs <html lang>); display text stays ragged.
+   Card details stay ragged: their column is too narrow to justify without rivers. */
+.lead, .section-intro, .prose p:not(:first-child), .timeline ul li, .cred p:last-child { text-align: justify; hyphens: auto; }
 
 /* ---------- Cards ---------- */
+/* Cards in a row share row tracks (subgrid), so titles, metrics, details and stacks line up across cards. */
 .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
 .card {
-  display: flex; flex-direction: column; gap: 1.15rem;
+  display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 1.15rem;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 2.25rem;
 }
+.card > dl { grid-row: 4; }
 .card-tag { display: flex; align-items: center; color: var(--muted); font-family: var(--font-display); font-size: 1rem; }
 .card h3 { font-size: 2.4rem; font-weight: 500; line-height: 1.02; letter-spacing: -0.01em; }
 .metric { padding: 0.8rem 0; border-block: 1px solid var(--border); color: var(--muted); font-family: var(--font-display); font-size: 1rem; }
@@ -261,7 +266,7 @@ svg { flex: none; }
 .card dl div { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: 0.75rem; }
 .card dt { font-family: var(--font-display); font-weight: 500; color: var(--faint); font-size: 0.92rem; padding-top: 0.12rem; }
 .card dd { margin: 0; font-size: 1.02rem; line-height: 1.55; }
-.card .chips { margin-top: auto; padding-top: 0.75rem; }
+.card .chips { grid-row: 5; padding-top: 0.75rem; }
 .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .card:last-child:nth-child(odd) dl { max-width: 52rem; }
 .card:last-child:nth-child(odd) dl div { grid-template-columns: 6rem minmax(0, 1fr); }
@@ -282,7 +287,7 @@ svg { flex: none; }
   background: var(--bg); border: 1px solid var(--faint);
 }
 .timeline > li:first-child::before { background: var(--accent); border-color: var(--accent); }
-.tl-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.4rem 1.5rem; }
+.tl-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.4rem 1.5rem; max-width: 48rem; }
 .tl-head h3 { font-size: 2.5rem; font-weight: 500; letter-spacing: -0.01em; }
 .when { font-family: var(--font-display); font-size: 1rem; font-weight: 400; color: var(--muted); font-variant-numeric: tabular-nums; }
 .org { color: var(--muted); font-family: var(--font-heading); font-style: italic; font-weight: 500; font-size: 1.5rem; margin-top: 0.3rem; }
@@ -384,6 +389,8 @@ svg { flex: none; }
   .prose p:first-child { font-size: 1.65rem; }
   .creds { margin-top: 3.5rem; gap: 2rem; }
   .cta { padding: 4.5rem 1.25rem; }
+  /* Narrow measures can't justify cleanly, especially where the browser lacks hyphenation. */
+  .lead, .section-intro, .prose p:not(:first-child), .timeline ul li, .cred p:last-child { text-align: start; }
 }
 
 @media (max-width: 30rem) {
